@@ -1,0 +1,22 @@
+.details-grid {
+    display: grid;
+    gap: 4rem;
+    align-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.details-card {
+    min-height: 350px;
+}
+
+.img-wrapper {
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+}
+
+.basic-info-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}

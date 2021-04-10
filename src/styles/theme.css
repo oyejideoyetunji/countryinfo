@@ -1,0 +1,30 @@
+.bg-light {
+    background-color: hsl(0, 0%, 100%);
+}
+.bg-lightAlt {
+    background-color: hsl(0, 0%, 98%);
+}
+.text-dark {
+    color: hsl(200, 15%, 8%);
+}
+.text-darkAlt {
+    color: hsl(0, 0%, 52%);
+}
+.text-gray {
+    color: #d3d7d8;
+}
+
+
+/* dark mode */
+.bg-dark {
+    background-color: hsl(209, 23%, 22%);
+}
+.bg-darkAlt {
+    background-color: hsl(207, 26%, 17%); 
+}
+.text-light {
+    color: hsl(0, 0%, 100%);
+}
+.text-lightAlt {
+    color: #ffffffcc;
+}
