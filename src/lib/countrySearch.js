@@ -1,0 +1,1 @@
+export const countryFilterKeys = ["name", "capital", "region", "subregion"];

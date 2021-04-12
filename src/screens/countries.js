@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import '../styles/countries.css';
 import { getCountries } from "../services/restCountries";
 import { Link } from "react-router-dom";
+import { countryFilterKeys } from "../lib/countrySearch";
 
 
 const Countries = ({ theme }) => {
@@ -58,10 +59,11 @@ const Countries = ({ theme }) => {
                         onChange={onfilterKeyChange}
                         className={`select-css w-full ${theme.primaryText}`}
                     >
-                        <option value="name">Name</option>
-                        <option value="capital">Capital</option>
-                        <option value="region">Region</option>
-                        <option value="subregion">Subregion</option>
+                        {
+                            countryFilterKeys.map(key => (
+                                <option key={key} value={key}>{key.toUpperCase()}</option>
+                            ))
+                        }
                     </select>
                 </div>
             </section>
