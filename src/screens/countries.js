@@ -69,14 +69,12 @@ const Countries = ({ theme }) => {
             </section>
 
             <section className={`w-full countries-grid pb-2`}>
-                {!!getCountriesToShow().length && (
+                {!!getCountriesToShow()?.length && (
                     getCountriesToShow().map(country => (
                         <div key={country.name} className={`country-card shadow-md ${theme.cardBg}`}>
-                            <Link to={`/country/${country.name}`}>
-                                <div
-                                    className={`w-full flag-bearer`}
-                                    style={{backgroundImage: `url(${country.flag})`}}
-                                />
+                            <Link className="w-full m-0" to={`/country/${country.name}`}>
+                                <div className="w-full flag m-0" style={{backgroundImage: `url(${country.flag})`}} />
+                                {/* <img className="w-full flag" alt="flag" src={country.flag} /> */}
                             </Link>
                             <div className={`px-1`}>
                                 <h5>{country.name}</h5>

@@ -53,6 +53,10 @@ code {
     height: 100vh;
 }
 
+.block {
+    display: block;
+}
+
 .flex {
     display: flex;
 }

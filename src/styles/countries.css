@@ -20,14 +20,15 @@
 }
 
 .country-card {
-    max-width: 350px;
-    min-height: 350px;
+    max-width: 300px;
+    min-height: 400px;
 }
 
-.flag-bearer {
-    height: 150px;
+.flag {
+    height: 55%;
     background-size: cover;
-    background-position: center;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 .select-css {
