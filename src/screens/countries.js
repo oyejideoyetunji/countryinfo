@@ -43,7 +43,7 @@ const Countries = ({ theme }) => {
     return(
         <section className={`w-full container-margin px-2 ${theme.primaryText}`}>
 
-            <section className={`w-full flex items-center justify-between py-2`}>
+            <section className={`w-full flex flex-wrap items-center justify-between py-2`}>
                 <div className={`search-input w-half shadow-md ${theme.cardBg}`}>
                     <input
                         value={filterValue}
@@ -52,7 +52,7 @@ const Countries = ({ theme }) => {
                         onChange={onfilterValueChange}
                     />
                 </div>
-                <span className="px-2"/>
+                <span className="px-2 py-sm"/>
                 <div className={`search-input w-30p shadow-md ${theme.cardBg}`}>
                     <select
                         value={filterKey}
