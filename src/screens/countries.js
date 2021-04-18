@@ -71,7 +71,7 @@ const Countries = ({ theme }) => {
             <section className={`w-full countries-grid pb-2`}>
                 {!!getCountriesToShow()?.length && (
                     getCountriesToShow().map(country => (
-                        <div key={country.name} className={`country-card shadow-md ${theme.cardBg}`}>
+                        <div key={country.name} className={`country-card w-full shadow-md ${theme.cardBg}`}>
                             <Link className="w-full m-0" to={`/country/${country.name}`}>
                                 <div className="w-full flag m-0" style={{backgroundImage: `url(${country.flag})`}} />
                                 {/* <img className="w-full flag" alt="flag" src={country.flag} /> */}

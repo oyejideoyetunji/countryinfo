@@ -30,7 +30,7 @@ const Country = ({ match, theme }) => {
                 </button>
             </section>
                 
-            {country && (
+            {!!country && (
                 <section className={`details-grid`}>
                     <div
                         style={{backgroundImage: `url(${country.flag})`}}

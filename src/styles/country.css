@@ -2,11 +2,11 @@
     display: grid;
     gap: 4rem;
     align-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
 
 .details-card {
-    min-height: 350px;
+    min-height: 400px;
 }
 
 .img-wrapper {
