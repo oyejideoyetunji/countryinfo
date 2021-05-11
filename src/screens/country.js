@@ -22,7 +22,7 @@ const Country = ({ match, theme }) => {
     return(
         <section className={`w-full container-margin px-2 ${theme.primaryText}`}>
 
-            <section className={`w-full py-4`}>
+            <section className={`w-full py-1`}>
                 <button className={`${theme.cardBg}`}>
                     <Link className={`link ${theme.primaryText}`} to="/">
                         back
@@ -31,14 +31,16 @@ const Country = ({ match, theme }) => {
             </section>
                 
             {!!country && (
-                <section className={`details-grid`}>
+                <section className="w-full details-grid">
                     <div
-                        style={{backgroundImage: `url(${country.flag})`}}
                         className={`details-card img-wrapper`}
-                    />
+                    >
+                        <img className="w-full" src={country.flag} alt="country flag" />
+                    </div>
                     <div className={`details-card`}>
                         <h2>{country.name}</h2>
-                        <div className={`basic-info-grid`}>
+
+                        <div className={`w-full basic-info-grid`}>
                             <div className={`grid-item`}>
                                 <p>
                                     <span>Native Name: </span><span>{country.nativeName}</span>
@@ -73,16 +75,18 @@ const Country = ({ match, theme }) => {
                                 </p>
                             </div>
                         </div>
-                        <section className={`flex py-2`}>
+                        
+                        <section className={`flex flex-wrap items-center py-2`}>
                             <span>Border Countries: </span>
                             {
                                 country.borders.map(bordC => (
-                                    <button className={`m-sm ${theme.primaryText} ${theme.cardBg}`} key={bordC}>
+                                    <button className={`m-sm my-sm ${theme.primaryText} ${theme.cardBg}`} key={bordC}>
                                         {bordC}
                                     </button>
                                 ))
                             }
                         </section>
+
                     </div>
                 </section>
             )}

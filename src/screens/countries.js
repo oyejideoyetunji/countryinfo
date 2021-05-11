@@ -17,7 +17,7 @@ const Countries = ({ theme }) => {
             setCountries(countriesData)
         }
 
-        fetchCountries()
+        fetchCountries();
     }, [countries])
 
     const onfilterKeyChange = (event) => {
@@ -30,7 +30,7 @@ const Countries = ({ theme }) => {
 
     const getCountriesToShow = () => {
         if(!filterValue.trim()){
-            return countries
+            return countries;
         }else {
             return countries.filter(country =>
                 country[filterKey]
@@ -43,8 +43,8 @@ const Countries = ({ theme }) => {
     return(
         <section className={`w-full container-margin px-2 ${theme.primaryText}`}>
 
-            <section className={`w-full flex flex-wrap items-center justify-between py-2`}>
-                <div className={`search-input w-half shadow-md ${theme.cardBg}`}>
+            <section className={`search-block w-full flex py-1`}>
+                <div className={`search-column srch-input-wrp shadow-md my-sm ${theme.cardBg}`}>
                     <input
                         value={filterValue}
                         placeholder="search for country"
@@ -52,8 +52,7 @@ const Countries = ({ theme }) => {
                         onChange={onfilterValueChange}
                     />
                 </div>
-                <span className="px-2 py-sm"/>
-                <div className={`search-input w-30p shadow-md ${theme.cardBg}`}>
+                <div className={`search-column srch-select-wrp shadow-md my-sm ${theme.cardBg}`}>
                     <select
                         value={filterKey}
                         onChange={onfilterKeyChange}
@@ -71,7 +70,7 @@ const Countries = ({ theme }) => {
             <section className={`w-full countries-grid pb-2`}>
                 {!!getCountriesToShow()?.length && (
                     getCountriesToShow().map(country => (
-                        <div key={country.name} className={`country-card w-full shadow-md ${theme.cardBg}`}>
+                        <div key={country.name} className={`country-card shadow-md ${theme.cardBg}`}>
                             <Link className="w-full m-0" to={`/country/${country.name}`}>
                                 <div className="w-full flag m-0" style={{backgroundImage: `url(${country.flag})`}} />
                                 {/* <img className="w-full flag" alt="flag" src={country.flag} /> */}
