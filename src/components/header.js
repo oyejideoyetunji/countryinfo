@@ -1,6 +1,6 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import "../styles/header.css";
 
 
@@ -13,7 +13,7 @@ const Header = ({ theme, setThemeState, isDarkTheme }) => {
                 ${theme.cardBg} ${theme.primaryText}`
             }
         >
-            <h2 className={`${theme.primaryText}`}>Where in the world?</h2>
+            <h2 className={`${theme.primaryText} logo-name`}>Where in the world?</h2>
             <div onClick={setThemeState} className={`mode-switch cursor-pointer`}>
                 {
                     isDarkTheme ? (

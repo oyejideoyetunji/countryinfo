@@ -1,8 +1,31 @@
-.header{
+.header {
     height: 4.25rem;
     z-index: 99999;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+}
+
+.logo-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+@media only screen and (min-width: 500px){
+    .logo-name {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 760px){
+    .logo-name {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (min-width: 1000px){
+    .logo-name {
+        font-size: 28px;
+    }
 }

@@ -1,12 +1,15 @@
-.search-input {
+.search-block {
+    flex-direction: column;
+}
+
+.search-column {
     padding: 0.8rem 1.5rem;
     border-radius: 4px;
 }
 
-.search-input > input, select {
+.search-column > input, select {
     border: none;
     outline: none;
-    margin: 0 0.6rem;
     background-color: inherit;
 }
 
@@ -14,15 +17,12 @@
     display: grid;
     row-gap: 3.5rem;
     grid-template-columns: 1fr;
-    /* grid-template-columns: repeat(auto-fit, minmax(100%, 1fr)); */
-
     justify-content: center;
     align-content: center;
 }
 
 .country-card {
-    /* min-width: 220px; */
-    max-width: 350px;
+    min-width: 250px;
     height: 400px;
 }
 
@@ -63,26 +63,48 @@
   );
 }
 
-@media only screen and (max-width: 600px){
-    .search-input {
-        width: 100%;
+@media only screen and (min-width: 600px){
+    .search-block {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
-}
 
-@media only screen and (min-width: 550px){
+    .search-block > * {
+        width: 48%;
+    }
+
     .countries-grid {
         grid-template-columns: 1fr 1fr;
-        column-gap: 2rem;
+        column-gap: 1.5rem;
     }
 }
 
-@media only screen and (min-width: 800px){
+@media only screen and (min-width: 780px){
+    .srch-input-wrp {
+        width: 45%;
+    }
+
+    .srch-select-wrp {
+        width: 30%;
+    }
+}
+
+@media only screen and (min-width: 980px){
+    .srch-input-wrp {
+        width: 35%;
+    }
+
+    .srch-select-wrp {
+        width: 25%;
+    }
+
     .countries-grid {
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
 
-@media only screen and (min-width: 1000px){
+@media only screen and (min-width: 1250px){
     .countries-grid {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
