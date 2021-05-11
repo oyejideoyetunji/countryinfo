@@ -18,6 +18,9 @@ const Countries = ({ theme }) => {
         }
 
         fetchCountries();
+        // return () => {
+        //     source.cancel();
+        // };
     }, [countries])
 
     const onfilterKeyChange = (event) => {
@@ -71,9 +74,8 @@ const Countries = ({ theme }) => {
                 {!!getCountriesToShow()?.length && (
                     getCountriesToShow().map(country => (
                         <div key={country.name} className={`country-card shadow-md ${theme.cardBg}`}>
-                            <Link className="w-full m-0" to={`/country/${country.name}`}>
+                            <Link className="w-full m-0" to={`/country/${country.name}?queryKey=name`}>
                                 <div className="w-full flag m-0" style={{backgroundImage: `url(${country.flag})`}} />
-                                {/* <img className="w-full flag" alt="flag" src={country.flag} /> */}
                             </Link>
                             <div className={`px-1`}>
                                 <h5>{country.name}</h5>
