@@ -1,23 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { getCountry } from '../services/restCountries';
 import '../styles/country.css';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 
 
 const Country = ({ match, theme }) => {
 
-    const name = match.params.countryName;
+    const queryValue = match.params.queryValue;
     const [country, setCountry] = useState();
+    const location = useLocation();
+    const queryKey = new URLSearchParams(location.search).get('queryKey');
+
 
     useEffect(() => {
         const fetchCountry = async() => {
-            const countryData = await getCountry(name)
+            const countryData = await getCountry(queryValue, queryKey)
             setCountry(countryData)
         }
 
-        fetchCountry()
-    }, [name])
+        fetchCountry();
+        // return () => {
+        //     source.cancel();
+        // }
+    }, [queryValue, queryKey])
 
     return(
         <section className={`w-full container-margin px-2 ${theme.primaryText}`}>
@@ -81,7 +87,9 @@ const Country = ({ match, theme }) => {
                             {
                                 country.borders.map(bordC => (
                                     <button className={`m-sm my-sm ${theme.primaryText} ${theme.cardBg}`} key={bordC}>
-                                        {bordC}
+                                        <Link className={`link ${theme.primaryText}`} to={`/country/${bordC}?queryKey=code`}>
+                                            {bordC}
+                                        </Link>
                                     </button>
                                 ))
                             }

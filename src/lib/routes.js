@@ -1,4 +1,4 @@
 export const routes = {
     Home: "/",
-    Country: "/country/:countryName"
+    Country: "/country/:queryValue"
 }
