@@ -12,15 +12,14 @@ const Countries = ({ theme }) => {
     const [filterValue, setFilterValue] = useState('');
 
     useEffect(() => {
+        let mounted = true;
         const fetchCountries = async () => {
-            const countriesData = await getCountries()
-            setCountries(countriesData)
+            const countriesData = await getCountries();
+            if(mounted)setCountries(countriesData);
         }
-
         fetchCountries();
-        // return () => {
-        //     source.cancel();
-        // };
+        return () => { mounted = false}
+
     }, [countries])
 
     const onfilterKeyChange = (event) => {

@@ -14,15 +14,13 @@ const Country = ({ match, theme }) => {
 
 
     useEffect(() => {
+        let mounted = true
         const fetchCountry = async() => {
-            const countryData = await getCountry(queryValue, queryKey)
-            setCountry(countryData)
+            const countryData = await getCountry(queryValue, queryKey);
+            if(mounted)setCountry(countryData);
         }
-
         fetchCountry();
-        // return () => {
-        //     source.cancel();
-        // }
+        return () => { mounted = false }
     }, [queryValue, queryKey])
 
     return(
