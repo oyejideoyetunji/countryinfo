@@ -88,6 +88,10 @@
     .srch-select-wrp {
         width: 30%;
     }
+
+    .countries-grid {
+        column-gap: 3.5rem;
+    }
 }
 
 @media only screen and (min-width: 980px){
@@ -100,6 +104,7 @@
     }
 
     .countries-grid {
+        column-gap: 1.5rem;
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
