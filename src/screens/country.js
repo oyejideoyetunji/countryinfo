@@ -65,17 +65,17 @@ const Country = ({ match, theme }) => {
                             <div className={`grid-item`}>
                                 <p>
                                     <span>Top Level Domian: </span>
-                                    <span>{country.topLevelDomain.join(', ')}</span>
+                                    <span>{country.topLevelDomain?.join(', ')}</span>
                                 </p>
                                 <p>
                                     <span>Currencies: </span>
                                     <span>
-                                        {country.currencies.map(currency => currency.code).join(', ')}
+                                        {country.currencies?.map(currency => currency.code).join(', ')}
                                     </span>
                                 </p>
                                 <p>
                                     <span>Languages: </span>
-                                    <span>{country.languages.map(lang => lang.name).join(', ')}</span>
+                                    <span>{country.languages?.map(lang => lang.name).join(', ')}</span>
                                 </p>
                             </div>
                         </div>
@@ -83,7 +83,7 @@ const Country = ({ match, theme }) => {
                         <section className={`flex flex-wrap items-center py-2`}>
                             <span>Border Countries: </span>
                             {
-                                country.borders.map(bordC => (
+                                country.borders?.map(bordC => (
                                     <button className={`m-sm my-sm ${theme.primaryText} ${theme.cardBg}`} key={bordC}>
                                         <Link className={`link ${theme.primaryText}`} to={`/country/${bordC}?queryKey=code`}>
                                             {bordC}

@@ -2,7 +2,7 @@ import axios from "axios";
 
 const CancelToken = axios.CancelToken;
 export const source = CancelToken.source();
-const baseUrl = "https://restcountries.eu/rest/v2";
+const baseUrl = "https://restcountries.com/v2";
 
 
 const getCountryByName = async (countryName) => {

@@ -20,7 +20,7 @@ const Countries = ({ theme }) => {
         fetchCountries();
         return () => { mounted = false}
 
-    }, [countries])
+    }, [])
 
     const onfilterKeyChange = (event) => {
         setFilterKey(event.target.value)
